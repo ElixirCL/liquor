@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.2">
+    <meta name="project" content="Liquor Tags v1.0.0">
+
+      <meta name="author" content="AUTHORS.md">
+
+
+    <title>Liquor Examples — Liquor Tags v1.0.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-JKHCEBPC.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-A7S2WMC7.js"></script>
+    <script src="dist/sidebar_items-269C834B.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-JRPQ5PR6.js"></script>
+
+
+  </head>
+  <body data-type="extras" class="page-livemd">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="https://hexdocs.pm/elixircl_" class="sidebar-projectName" translate="no">
+Liquor Tags
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v1.0.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of Liquor Tags</span>
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+    <a href="https://github.com/ElixirCL/liquor/blob/main/EXAMPLES.livemd#L1" title="View Source" class="icon-action" rel="help">
+      <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+      <span class="sr-only">View Source</span>
+    </a>
+
+
+  <span>Liquor Examples</span>
+</h1>
+
+  <div class="livebook-badge-container">
+    <a href="#" class="livebook-badge">
+      <img src="https://livebook.dev/badge/v1/blue.svg" alt="Run in Livebook" width="150" />
+    </a>
+  </div>
+
+<p><em>Liquor Tags</em>. Inspired by dev.to embed tags (liquid tags),
+takes Open Graph data from URLs and generate output using pseudo EEx templates.
+Useful when creating previews of websites using Open Graph data.</p><h2 id="installation" class="section-heading">
+  <a href="#installation" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Installation</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Mix</span><span class="o">.</span><span class="n">install</span><span class="p" data-group-id="7917937984-1">(</span><span class="p" data-group-id="7917937984-2">[</span><span class="w">
+  </span><span class="p" data-group-id="7917937984-3">{</span><span class="ss">:liquor</span><span class="p">,</span><span class="w"> </span><span class="ss">git</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/ElixirCL/liquor.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">branch</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;main&quot;</span><span class="p" data-group-id="7917937984-3">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="7917937984-4">{</span><span class="ss">:req</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.4.14&quot;</span><span class="p" data-group-id="7917937984-4">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="7917937984-5">{</span><span class="ss">:kino</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.12.3&quot;</span><span class="p" data-group-id="7917937984-5">}</span><span class="w">
+</span><span class="p" data-group-id="7917937984-2">]</span><span class="p" data-group-id="7917937984-1">)</span></code></pre><pre><code class="makeup elixir" translate="no"><span class="kn">alias</span><span class="w"> </span><span class="nc">Liquor.Tags.Tag</span><span class="w">
+
+</span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;
+{% github ElixirCL %}
+{% embed https://ninjas.cl %}
+&quot;&quot;&quot;</span><span class="w">
+
+</span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2010405406-1">[</span><span class="w">
+  </span><span class="nc">Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="2010405406-2">(</span><span class="s">&quot;github&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Github: &lt;%= og.url %&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;https://github.com&quot;</span><span class="p" data-group-id="2010405406-2">)</span><span class="p">,</span><span class="w">
+  </span><span class="nc">Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="2010405406-3">(</span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Website: &lt;%= og.title %&gt;&quot;</span><span class="p" data-group-id="2010405406-3">)</span><span class="w">
+</span><span class="p" data-group-id="2010405406-1">]</span><span class="w">
+
+</span><span class="c1"># Fetch only needs to return the HTML string</span><span class="w">
+</span><span class="n">fetch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k" data-group-id="2010405406-4">fn</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nc">Req</span><span class="o">.</span><span class="n">get!</span><span class="p" data-group-id="2010405406-5">(</span><span class="n">url</span><span class="p" data-group-id="2010405406-5">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">then</span><span class="p" data-group-id="2010405406-6">(</span><span class="o">&amp;</span><span class="w"> </span><span class="ni">&amp;1</span><span class="o">.</span><span class="n">body</span><span class="p" data-group-id="2010405406-6">)</span><span class="w"> </span><span class="k" data-group-id="2010405406-4">end</span><span class="w">
+
+</span><span class="nc">Liquor</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="2010405406-7">(</span><span class="n">content</span><span class="p">,</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">fetch</span><span class="p" data-group-id="2010405406-7">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Kino.Text</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="2010405406-8">(</span><span class="p" data-group-id="2010405406-8">)</span></code></pre><h3 id="renders" class="section-heading">
+  <a href="#renders" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Renders</span>
+</h3>
+<pre><code class="text">Github: https://github.com/ElixirCL
+Website: Ninja Software Chile (Ninjas.cl)</code></pre>
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="changelog.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+Changelog
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="authors.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+Liquor Authors
+        </span>
+      </a>
+
+  </div>
+</div>
+      <footer class="footer">
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/liquor/1.0.0" class="footer-hex-package">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/liquor/1.0.0">Hex Preview</a>
+
+                (<a href="https://preview.hex.pm/preview/liquor/1.0.0/show/EXAMPLES.livemd">current file</a>)
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="Liquor Tags.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.2) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>

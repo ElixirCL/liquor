@@ -1,3 +1,7 @@
+# --> Editors
+.idea/
+.vscode/
+
 # ---> Elixir
 /_build
 /cover
@@ -58,7 +62,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*

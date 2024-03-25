@@ -1,0 +1,42 @@
+# Liquor Examples
+
+*Liquor Tags*. Inspired by dev.to embed tags (liquid tags),
+takes Open Graph data from URLs and generate output using pseudo EEx templates.
+Useful when creating previews of websites using Open Graph data.
+
+## Installation
+
+```elixir
+Mix.install([
+  {:liquor, git: "https://github.com/ElixirCL/liquor.git", branch: "main"},
+  {:req, "~> 0.4.14"},
+  {:kino, "~> 0.12.3"}
+])
+```
+
+```elixir
+alias Liquor.Tags.Tag
+
+content = """
+{% github ElixirCL %}
+{% embed https://ninjas.cl %}
+"""
+
+tags = [
+  Tag.new("github", "Github: <%= og.url %>", "https://github.com"),
+  Tag.new("embed", "Website: <%= og.title %>")
+]
+
+# Fetch only needs to return the HTML string
+fetch = fn url -> Req.get!(url) |> then(& &1.body) end
+
+Liquor.render(content, tags, fetch)
+|> Kino.Text.new()
+```
+
+### Renders
+
+```text
+Github: https://github.com/ElixirCL
+Website: Ninja Software Chile (Ninjas.cl)
+```

@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.ex linguist-language=Elixir
+*.exs linguist-language=Elixir
+*.livemd linguist-language=Markdown
+*.md linguist-language=Markdown
