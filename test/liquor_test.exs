@@ -5,6 +5,7 @@ defmodule LiquorTest do
   setup_all do
     template = "<%= og.url %>"
     template_youtube = "<%= og.video:secure_url %>"
+    template_embed = "<%= og.title %>"
 
     {:ok,
      params: %{
@@ -13,6 +14,7 @@ defmodule LiquorTest do
        {% github elixircl/liquor %}
        {% github https://github.com/elixircl/elixircl %}
        {% youtube JNWPsaO4PNM %}
+       {% embed https://codeberg.org %}
        {% invalid tag %}
        """,
        template: template,
@@ -23,7 +25,8 @@ defmodule LiquorTest do
        tags: [
          Liquor.Tags.Tag.new("github", template, "https://github.com/"),
          Liquor.Tags.Tag.new("ninjas", template, "https://ninjas.cl/blog/"),
-         Liquor.Tags.Tag.new("youtube", template_youtube, "https://www.youtube.com/watch?v=")
+         Liquor.Tags.Tag.new("youtube", template_youtube, "https://www.youtube.com/watch?v="),
+         Liquor.Tags.Tag.new("embed", template_embed)
        ]
      }}
   end
@@ -32,6 +35,6 @@ defmodule LiquorTest do
     %{content: content, tags: tags, fetch: fetch} = state[:params]
 
     assert Liquor.render(content, tags, fetch) ==
-             "https://ninjas.cl/blog/protecting-your-content-against-ai-scrappers\nhttps://github.com/ElixirCL/liquor\nhttps://github.com/ElixirCL/ElixirCL\nhttps://www.youtube.com/embed/JNWPsaO4PNM\n{% invalid tag %}\n"
+             "https://ninjas.cl/blog/protecting-your-content-against-ai-scrappers\nhttps://github.com/ElixirCL/liquor\nhttps://github.com/ElixirCL/ElixirCL\nhttps://www.youtube.com/embed/JNWPsaO4PNM\nCodeberg.org\n{% invalid tag %}\n"
   end
 end
