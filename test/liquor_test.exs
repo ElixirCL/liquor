@@ -10,7 +10,8 @@ defmodule LiquorTest do
      params: %{
        content: """
        {% ninjas protecting-your-content-against-ai-scrappers %}
-       {% github elixircl/elixircl %}
+       {% github elixircl/liquor %}
+       {% github https://github.com/elixircl/elixircl %}
        {% youtube JNWPsaO4PNM %}
        {% invalid tag %}
        """,
@@ -31,6 +32,6 @@ defmodule LiquorTest do
     %{content: content, tags: tags, fetch: fetch} = state[:params]
 
     assert Liquor.render(content, tags, fetch) ==
-             "https://ninjas.cl/blog/protecting-your-content-against-ai-scrappers\nhttps://github.com/ElixirCL/ElixirCL\nhttps://www.youtube.com/embed/JNWPsaO4PNM\n{% invalid tag %}\n"
+             "https://ninjas.cl/blog/protecting-your-content-against-ai-scrappers\nhttps://github.com/ElixirCL/liquor\nhttps://github.com/ElixirCL/ElixirCL\nhttps://www.youtube.com/embed/JNWPsaO4PNM\n{% invalid tag %}\n"
   end
 end

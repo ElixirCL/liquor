@@ -46,7 +46,7 @@ defmodule Liquor.Tags do
           # Finally fetch the OpenGraph data.
           og =
             case uri.scheme do
-              nil -> URI.parse("#{URI.to_string(tag.uri)}#{uri.path}")
+              nil -> URI.parse("#{URI.to_string(tag.uri)}#{URI.to_string(uri)}")
               _ -> uri
             end
             |> URI.to_string()
