@@ -46,9 +46,10 @@ defmodule Liquor.Tags do
           # Finally fetch the OpenGraph data.
           og =
             case uri.scheme do
-              nil -> URI.parse("#{tag.uri.scheme}://#{tag.uri.host}/#{uri.path}")
+              nil -> URI.parse("#{URI.to_string(tag.uri)}#{uri.path}")
               _ -> uri
             end
+            |> URI.to_string()
             |> fetch.()
             |> OpenGraph.parse()
 
@@ -58,7 +59,7 @@ defmodule Liquor.Tags do
             og: og
           ]
 
-          Map.merge(match, %{opengraph: og, output: Tag.render(tag, bindings)})
+          Map.merge(match, %{og: og, output: Tag.render(tag, bindings)})
         end)
       end),
       :infinity
@@ -98,10 +99,11 @@ defmodule Liquor.Tags do
   """
   @spec render(Tags.t()) :: String.t()
   def render(results) do
-    Enum.reduce(results.tags, results.content, fn tag, acc ->
-      Enum.map_join(tag.matches, fn item ->
-        String.replace(acc, item.match, item.output)
-      end)
+    results.tags
+    |> Enum.filter(fn tag -> tag.matches != [] end)
+    |> Enum.flat_map(fn item -> item.matches end)
+    |> Enum.reduce(results.content, fn item, acc ->
+      String.replace(acc, item.match, item.output)
     end)
   end
 end

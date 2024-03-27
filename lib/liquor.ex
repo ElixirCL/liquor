@@ -2,9 +2,7 @@ defmodule Liquor do
   @moduledoc """
     Contains the main functions to initialize and render the tags.
   """
-  alias __MODULE__
-  alias __MODULE__.Tags
-  alias __MODULE__.Tags.Tag
+  alias Liquor.Tags.Tag
 
   @typedoc "Initialized the map with the content, tags and fetch. Fetch must call the URL and return the HTML string to extract the OpenGraph data."
   @type t :: %{content: String.t(), tags: list(Tag.t()), fetch: (String.t() -> String.t())}
@@ -23,7 +21,7 @@ defmodule Liquor do
   @spec render(String.t(), list(Tag.t()), (String.t() -> String.t())) :: String.t()
   def render(content, tags, fetch) do
     Liquor.init(content, tags, fetch)
-    |> Tags.find()
-    |> Tags.render()
+    |> Liquor.Tags.find()
+    |> Liquor.Tags.render()
   end
 end

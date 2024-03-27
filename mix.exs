@@ -1,7 +1,7 @@
 defmodule Liquor.MixProject do
   use Mix.Project
 
-  @version "1.0.0"
+  @version "1.0.1"
 
   def project do
     [
@@ -41,7 +41,7 @@ defmodule Liquor.MixProject do
       # Docs
       name: "Liquor Tags",
       source_url: "https://github.com/ElixirCL/liquor",
-      homepage_url: "https://hexdocs.pm/elixircl_",
+      homepage_url: "https://github.com/ElixirCL/liquor",
       docs: [
         # The main page in the docs
         main: "examples",
