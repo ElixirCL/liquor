@@ -5,12 +5,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.31.2">
-    <meta name="project" content="Liquor Tags v1.0.0">
+    <meta name="project" content="Liquor Tags v1.0.1">
 
       <meta name="author" content="AUTHORS.md">
 
 
-    <title>Liquor Examples — Liquor Tags v1.0.0</title>
+    <title>Liquor Examples — Liquor Tags v1.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-JKHCEBPC.css" />
 
 
@@ -53,11 +53,11 @@
     <div class="sidebar-projectInfo">
 
       <div>
-        <a href="https://hexdocs.pm/elixircl_" class="sidebar-projectName" translate="no">
+        <a href="https://github.com/ElixirCL/liquor" class="sidebar-projectName" translate="no">
 Liquor Tags
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v1.0.0
+          v1.0.1
         </div>
       </div>
     </div>
@@ -142,27 +142,27 @@ Useful when creating previews of websites using Open Graph data.</p><h2 id="inst
   </a>
   <span class="text">Installation</span>
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Mix</span><span class="o">.</span><span class="n">install</span><span class="p" data-group-id="2499207083-1">(</span><span class="p" data-group-id="2499207083-2">[</span><span class="w">
-  </span><span class="p" data-group-id="2499207083-3">{</span><span class="ss">:liquor</span><span class="p">,</span><span class="w"> </span><span class="ss">git</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/ElixirCL/liquor.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">branch</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;main&quot;</span><span class="p" data-group-id="2499207083-3">}</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="2499207083-4">{</span><span class="ss">:req</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.4.14&quot;</span><span class="p" data-group-id="2499207083-4">}</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="2499207083-5">{</span><span class="ss">:kino</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.12.3&quot;</span><span class="p" data-group-id="2499207083-5">}</span><span class="w">
-</span><span class="p" data-group-id="2499207083-2">]</span><span class="p" data-group-id="2499207083-1">)</span></code></pre><pre><code class="makeup elixir" translate="no"><span class="kn">alias</span><span class="w"> </span><span class="nc">Liquor.Tags.Tag</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="nc">Mix</span><span class="o">.</span><span class="n">install</span><span class="p" data-group-id="0611835768-1">(</span><span class="p" data-group-id="0611835768-2">[</span><span class="w">
+  </span><span class="p" data-group-id="0611835768-3">{</span><span class="ss">:liquor</span><span class="p">,</span><span class="w"> </span><span class="ss">git</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/ElixirCL/liquor.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">branch</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;main&quot;</span><span class="p" data-group-id="0611835768-3">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="0611835768-4">{</span><span class="ss">:req</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.4.14&quot;</span><span class="p" data-group-id="0611835768-4">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="0611835768-5">{</span><span class="ss">:kino</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.12.3&quot;</span><span class="p" data-group-id="0611835768-5">}</span><span class="w">
+</span><span class="p" data-group-id="0611835768-2">]</span><span class="p" data-group-id="0611835768-1">)</span></code></pre><pre><code class="makeup elixir" translate="no"><span class="kn">alias</span><span class="w"> </span><span class="nc">Liquor.Tags.Tag</span><span class="w">
 
 </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;
 {% github ElixirCL %}
 {% embed https://ninjas.cl %}
 &quot;&quot;&quot;</span><span class="w">
 
-</span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7421126833-1">[</span><span class="w">
-  </span><span class="nc">Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="7421126833-2">(</span><span class="s">&quot;github&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Github: &lt;%= og.url %&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;https://github.com&quot;</span><span class="p" data-group-id="7421126833-2">)</span><span class="p">,</span><span class="w">
-  </span><span class="nc">Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="7421126833-3">(</span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Website: &lt;%= og.title %&gt;&quot;</span><span class="p" data-group-id="7421126833-3">)</span><span class="w">
-</span><span class="p" data-group-id="7421126833-1">]</span><span class="w">
+</span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="6590170951-1">[</span><span class="w">
+  </span><span class="nc">Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="6590170951-2">(</span><span class="s">&quot;github&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Github: &lt;%= og.url %&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;https://github.com&quot;</span><span class="p" data-group-id="6590170951-2">)</span><span class="p">,</span><span class="w">
+  </span><span class="nc">Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="6590170951-3">(</span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Website: &lt;%= og.title %&gt;&quot;</span><span class="p" data-group-id="6590170951-3">)</span><span class="w">
+</span><span class="p" data-group-id="6590170951-1">]</span><span class="w">
 
 </span><span class="c1"># Fetch only needs to return the HTML string</span><span class="w">
-</span><span class="n">fetch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k" data-group-id="7421126833-4">fn</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nc">Req</span><span class="o">.</span><span class="n">get!</span><span class="p" data-group-id="7421126833-5">(</span><span class="n">url</span><span class="p" data-group-id="7421126833-5">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">then</span><span class="p" data-group-id="7421126833-6">(</span><span class="o">&amp;</span><span class="w"> </span><span class="ni">&amp;1</span><span class="o">.</span><span class="n">body</span><span class="p" data-group-id="7421126833-6">)</span><span class="w"> </span><span class="k" data-group-id="7421126833-4">end</span><span class="w">
+</span><span class="n">fetch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k" data-group-id="6590170951-4">fn</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nc">Req</span><span class="o">.</span><span class="n">get!</span><span class="p" data-group-id="6590170951-5">(</span><span class="n">url</span><span class="p" data-group-id="6590170951-5">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">then</span><span class="p" data-group-id="6590170951-6">(</span><span class="o">&amp;</span><span class="w"> </span><span class="ni">&amp;1</span><span class="o">.</span><span class="n">body</span><span class="p" data-group-id="6590170951-6">)</span><span class="w"> </span><span class="k" data-group-id="6590170951-4">end</span><span class="w">
 
-</span><span class="nc">Liquor</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="7421126833-7">(</span><span class="n">content</span><span class="p">,</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">fetch</span><span class="p" data-group-id="7421126833-7">)</span><span class="w">
-</span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Kino.Text</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="7421126833-8">(</span><span class="p" data-group-id="7421126833-8">)</span></code></pre><h3 id="renders" class="section-heading">
+</span><span class="nc">Liquor</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="6590170951-7">(</span><span class="n">content</span><span class="p">,</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"> </span><span class="n">fetch</span><span class="p" data-group-id="6590170951-7">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Kino.Text</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="6590170951-8">(</span><span class="p" data-group-id="6590170951-8">)</span></code></pre><h3 id="renders" class="section-heading">
   <a href="#renders" class="hover-link">
     <i class="ri-link-m" aria-hidden="true"></i>
   </a>
@@ -200,11 +200,11 @@ Liquor Authors
         <p>
 
             <span class="line">
-              <a href="https://hex.pm/packages/liquor/1.0.0" class="footer-hex-package">Hex Package</a>
+              <a href="https://hex.pm/packages/liquor/1.0.1" class="footer-hex-package">Hex Package</a>
 
-              <a href="https://preview.hex.pm/preview/liquor/1.0.0">Hex Preview</a>
+              <a href="https://preview.hex.pm/preview/liquor/1.0.1">Hex Preview</a>
 
-                (<a href="https://preview.hex.pm/preview/liquor/1.0.0/show/EXAMPLES.livemd">current file</a>)
+                (<a href="https://preview.hex.pm/preview/liquor/1.0.1/show/EXAMPLES.livemd">current file</a>)
 
             </span>
 

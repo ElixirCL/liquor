@@ -1,4 +1,4 @@
-.PHONY: install test coverage lint format static docs archive
+.PHONY: install test coverage lint format static docs archive publish
 
 i install:
 	mix deps.get
@@ -26,3 +26,6 @@ d docs:
 
 a archive:
 	git archive -o code.zip HEAD
+
+p publish:
+	mix hex.publish

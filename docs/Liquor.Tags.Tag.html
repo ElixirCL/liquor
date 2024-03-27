@@ -5,12 +5,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.31.2">
-    <meta name="project" content="Liquor Tags v1.0.0">
+    <meta name="project" content="Liquor Tags v1.0.1">
 
       <meta name="author" content="AUTHORS.md">
 
 
-    <title>Liquor.Tags.Tag — Liquor Tags v1.0.0</title>
+    <title>Liquor.Tags.Tag — Liquor Tags v1.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-JKHCEBPC.css" />
 
 
@@ -53,11 +53,11 @@
     <div class="sidebar-projectInfo">
 
       <div>
-        <a href="https://hexdocs.pm/elixircl_" class="sidebar-projectName" translate="no">
+        <a href="https://github.com/ElixirCL/liquor" class="sidebar-projectName" translate="no">
 Liquor Tags
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v1.0.0
+          v1.0.1
         </div>
       </div>
     </div>
@@ -125,7 +125,7 @@ Pages
     </a>
 
   <span translate="no">Liquor.Tags.Tag</span> 
-  <small class="app-vsn" translate="no">(Liquor Tags v1.0.0)</small>
+  <small class="app-vsn" translate="no">(Liquor Tags v1.0.1)</small>
 
 </h1>
 
@@ -281,8 +281,8 @@ for all the tags when fetching the Open Graph data.</p><h2 id="new/3-examples" c
   </a>
   <span class="text">Examples</span>
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Liquor.Tags.Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4399921425-1">(</span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;%= og.title %&gt;&quot;</span><span class="p" data-group-id="4399921425-1">)</span><span class="w">
-</span><span class="p" data-group-id="4399921425-2">%</span><span class="nc" data-group-id="4399921425-2">Liquor.Tags.Tag</span><span class="p" data-group-id="4399921425-2">{</span><span class="ss">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;%= og.title %&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4399921425-3">%</span><span class="nc" data-group-id="4399921425-3">URI</span><span class="p" data-group-id="4399921425-3">{</span><span class="p" data-group-id="4399921425-3">}</span><span class="p" data-group-id="4399921425-2">}</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Liquor.Tags.Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="6865755932-1">(</span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;%= og.title %&gt;&quot;</span><span class="p" data-group-id="6865755932-1">)</span><span class="w">
+</span><span class="p" data-group-id="6865755932-2">%</span><span class="nc" data-group-id="6865755932-2">Liquor.Tags.Tag</span><span class="p" data-group-id="6865755932-2">{</span><span class="ss">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;%= og.title %&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6865755932-3">%</span><span class="nc" data-group-id="6865755932-3">URI</span><span class="p" data-group-id="6865755932-3">{</span><span class="p" data-group-id="6865755932-3">}</span><span class="p" data-group-id="6865755932-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="render/2">
@@ -322,7 +322,7 @@ for all the available keys.</p><h2 id="render/2-examples" class="section-heading
   </a>
   <span class="text">Examples</span>
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Liquor.Tags.Tag</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="8247912262-1">(</span><span class="nc">Liquor.Tags.Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8247912262-2">(</span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;%= og.title %&gt;&quot;</span><span class="p" data-group-id="8247912262-2">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8247912262-3">[</span><span class="ss">og</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8247912262-4">%</span><span class="nc" data-group-id="8247912262-4">OpenGraph</span><span class="p" data-group-id="8247912262-4">{</span><span class="ss">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A Sample Title&quot;</span><span class="p" data-group-id="8247912262-4">}</span><span class="p" data-group-id="8247912262-3">]</span><span class="p" data-group-id="8247912262-1">)</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Liquor.Tags.Tag</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="6778228993-1">(</span><span class="nc">Liquor.Tags.Tag</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="6778228993-2">(</span><span class="s">&quot;embed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;%= og.title %&gt;&quot;</span><span class="p" data-group-id="6778228993-2">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6778228993-3">[</span><span class="ss">og</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6778228993-4">%</span><span class="nc" data-group-id="6778228993-4">OpenGraph</span><span class="p" data-group-id="6778228993-4">{</span><span class="ss">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A Sample Title&quot;</span><span class="p" data-group-id="6778228993-4">}</span><span class="p" data-group-id="6778228993-3">]</span><span class="p" data-group-id="6778228993-1">)</span><span class="w">
 </span><span class="s">&quot;A Sample Title&quot;</span></code></pre>
   </section>
 </section>
@@ -334,9 +334,9 @@ for all the available keys.</p><h2 id="render/2-examples" class="section-heading
         <p>
 
             <span class="line">
-              <a href="https://hex.pm/packages/liquor/1.0.0" class="footer-hex-package">Hex Package</a>
+              <a href="https://hex.pm/packages/liquor/1.0.1" class="footer-hex-package">Hex Package</a>
 
-              <a href="https://preview.hex.pm/preview/liquor/1.0.0">Hex Preview</a>
+              <a href="https://preview.hex.pm/preview/liquor/1.0.1">Hex Preview</a>
 
             </span>
 
