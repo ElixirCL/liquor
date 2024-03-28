@@ -40,3 +40,32 @@ Liquor.render(content, tags, fetch)
 Github: https://github.com/ElixirCL
 Website: Ninja Software Chile (Ninjas.cl)
 ```
+
+### Advanced Fetch
+
+You can also create a fetch function that caches
+the html files like this:
+
+```elixir
+fetch =
+  fn url ->
+        md5 =
+          :crypto.hash(:md5, url)
+          |> Base.encode16(case: :lower)
+
+        path = Path.join([".opengraph"])
+        File.mkdir_p!(path)
+        file = Path.join([path, "#{md5}.html.cache"])
+
+        case File.read(file) do
+          {:error, _} ->
+                html = Req.get!(url)
+                |> then(& &1.body)
+
+                File.write!(file, html, [:write])
+                html
+
+          {:ok, html} -> html
+        end
+  end
+```
